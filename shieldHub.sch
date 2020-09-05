@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="0.1" unitdist="mm" unit="mm" style="dots" multiple="1" display="yes" altdistance="1" altunitdist="mm" altunit="mm"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="no" active="no"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="no"/>
@@ -2307,6 +2307,8 @@ With round pins</description>
 <part name="GND2" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="MS1" library="adafruit" deviceset="FEATHERWING" device=""/>
 <part name="JP3" library="adafruit" deviceset="PINHD-1X9" device=""/>
+<part name="VFAN" library="SparkFun-Connectors" deviceset="CONN_02" device=""/>
+<part name="GND3" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -2339,6 +2341,13 @@ With round pins</description>
 <instance part="JP3" gate="G$1" x="66.04" y="33.02" smashed="yes" rot="R180">
 <attribute name="NAME" x="72.39" y="19.685" size="1.778" layer="95" rot="R180"/>
 <attribute name="VALUE" x="72.39" y="48.26" size="1.778" layer="96" rot="R180"/>
+</instance>
+<instance part="VFAN" gate="G$1" x="177.62" y="110" smashed="yes" rot="R180">
+<attribute name="VALUE" x="180.16" y="114.826" size="1.778" layer="96" font="vector" rot="R180"/>
+<attribute name="NAME" x="180.16" y="104.412" size="1.778" layer="95" font="vector" rot="R180"/>
+</instance>
+<instance part="GND3" gate="1" x="166.5" y="101.8" smashed="yes">
+<attribute name="VALUE" x="163.96" y="99.26" size="1.778" layer="96"/>
 </instance>
 </instances>
 <busses>
@@ -2394,6 +2403,15 @@ With round pins</description>
 <pinref part="GND2" gate="1" pin="GND"/>
 <wire x1="157" y1="101.54" x2="157" y2="101" width="0.1524" layer="91"/>
 <junction x="157" y="101.54"/>
+</segment>
+<segment>
+<pinref part="VFAN" gate="G$1" pin="2"/>
+<wire x1="170" y1="107.46" x2="166.5" y2="107.46" width="0.1524" layer="91"/>
+<wire x1="166.5" y1="107.46" x2="166.5" y2="104.34" width="0.1524" layer="91"/>
+<wire x1="166.5" y1="104.34" x2="166.5" y2="104.2" width="0.1524" layer="91"/>
+<wire x1="166.5" y1="104.2" x2="166.4" y2="104.2" width="0.1524" layer="91"/>
+<pinref part="GND3" gate="1" pin="GND"/>
+<junction x="166.5" y="104.34"/>
 </segment>
 </net>
 <net name="N$5" class="0">
@@ -2576,11 +2594,12 @@ With round pins</description>
 <label x="115" y="110" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="5V" class="0">
+<net name="12V" class="0">
 <segment>
 <pinref part="VR1" gate="G$1" pin="OUT+"/>
-<wire x1="151" y1="110" x2="159" y2="110" width="0.1524" layer="91"/>
-<label x="159" y="110" size="1.778" layer="95"/>
+<pinref part="VFAN" gate="G$1" pin="1"/>
+<wire x1="151" y1="110" x2="170" y2="110" width="0.1524" layer="91"/>
+<label x="157.7" y="109.9" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="10_SDA" class="0">
