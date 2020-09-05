@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="1" unitdist="mm" unit="mm" style="dots" multiple="1" display="yes" altdistance="5" altunitdist="mil" altunit="mm"/>
+<grid distance="0.1" unitdist="mm" unit="mm" style="dots" multiple="1" display="yes" altdistance="5" altunitdist="mil" altunit="mm"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="no"/>
@@ -840,10 +840,6 @@ design rules under a new name.</description>
 <attribute name="NAME" x="50.4288" y="20.9638" size="1.27" layer="26" ratio="10" rot="MR90"/>
 <attribute name="VALUE" x="45.425" y="21.04" size="1.27" layer="28" rot="MR90"/>
 </element>
-<element name="VFAN" library="SparkFun-Connectors" package="1X02" value="" x="3.6" y="3.3" smashed="yes" rot="R90">
-<attribute name="NAME" x="2.203" y="2.03" size="0.6096" layer="25" font="vector" ratio="20" rot="R90"/>
-<attribute name="VALUE" x="5.632" y="2.03" size="0.6096" layer="27" font="vector" ratio="20" rot="R90"/>
-</element>
 <element name="BUTTON" library="SparkFun-Connectors" package="SCREWTERMINAL-3.5MM-2_LOCK" value="" x="5.3" y="43.8" smashed="yes" rot="R90">
 <attribute name="NAME" x="2.76" y="42.53" size="0.6096" layer="25" font="vector" ratio="20" rot="R90"/>
 <attribute name="PROD_ID" value="CONN-08399" x="5.3" y="43.8" size="1.778" layer="27" rot="R90" display="off"/>
@@ -853,6 +849,11 @@ design rules under a new name.</description>
 <attribute name="NAME" x="41.175" y="55.64" locked="yes" size="1.27" layer="25" ratio="10" rot="R270"/>
 <attribute name="POPULARITY" value="3" x="38" y="40.4" locked="yes" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="VALUE" x="33.555" y="55.64" locked="yes" size="1.27" layer="27" rot="R270"/>
+</element>
+<element name="VFAN" library="SparkFun-Connectors" package="SCREWTERMINAL-3.5MM-2_LOCK" value="" x="3.3" y="3" smashed="yes" rot="R90">
+<attribute name="NAME" x="0.76" y="1.73" size="0.6096" layer="25" font="vector" ratio="20" rot="R90"/>
+<attribute name="PROD_ID" value="CONN-08399" x="3.3" y="3" size="1.778" layer="27" rot="R90" display="off"/>
+<attribute name="VALUE" x="2.03" y="1.73" size="0.6096" layer="27" font="vector" ratio="20" rot="R90"/>
 </element>
 </elements>
 <signals>
@@ -873,7 +874,6 @@ design rules under a new name.</description>
 <vertex x="60" y="70"/>
 <vertex x="0" y="70"/>
 </polygon>
-<contactref element="VFAN" pad="2"/>
 <contactref element="RFM69" pad="2"/>
 <contactref element="BUTTON" pad="2"/>
 <wire x1="21.413" y1="56.921" x2="24.821" y2="56.921" width="1.27" layer="1"/>
@@ -890,6 +890,7 @@ design rules under a new name.</description>
 <wire x1="46.076" y1="21.076" x2="42" y2="17" width="1.27" layer="16"/>
 <wire x1="42" y1="17" x2="37.5" y2="17" width="1.27" layer="16"/>
 <wire x1="37.5" y1="17" x2="37.2" y2="17.3" width="1.27" layer="16"/>
+<contactref element="VFAN" pad="2"/>
 </signal>
 <signal name="N$1">
 <contactref element="JP1" pad="1"/>
@@ -1039,9 +1040,8 @@ design rules under a new name.</description>
 <signal name="12V">
 <contactref element="VR1" pad="OUT+"/>
 <contactref element="VFAN" pad="1"/>
-<wire x1="3.6" y1="3.3" x2="4.3" y2="2.6" width="1.27" layer="16"/>
-<wire x1="10.5" y1="2.6" x2="11.2" y2="3.3" width="1.27" layer="16"/>
-<wire x1="4.3" y1="2.6" x2="10.5" y2="2.6" width="1.27" layer="16"/>
+<wire x1="3.3" y1="2.8222" x2="10.7222" y2="2.8222" width="1.27" layer="16"/>
+<wire x1="10.7222" y1="2.8222" x2="11.2" y2="3.3" width="1.27" layer="16"/>
 </signal>
 <signal name="RFM69_RST">
 <contactref element="RFM69" pad="9"/>

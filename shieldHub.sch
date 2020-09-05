@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="1" unitdist="mm" unit="mm" style="dots" multiple="1" display="yes" altdistance="1" altunitdist="mm" altunit="mm"/>
+<grid distance="0.1" unitdist="mm" unit="mm" style="dots" multiple="1" display="yes" altdistance="1" altunitdist="mm" altunit="mm"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="no" active="no"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="no"/>
@@ -2115,11 +2115,11 @@ With round pins</description>
 <part name="GND1" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="GND2" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="RFM69" library="adafruit" deviceset="PINHD-1X9" device=""/>
-<part name="VFAN" library="SparkFun-Connectors" deviceset="CONN_02" device=""/>
 <part name="GND3" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="BUTTON" library="SparkFun-Connectors" deviceset="CONN_02" device="3.5MM_LOCK"/>
 <part name="JP3" library="pinhead" library_urn="urn:adsk.eagle:library:325" deviceset="PINHD-2X12" device="" package3d_urn="urn:adsk.eagle:package:22420/2"/>
 <part name="GND4" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
+<part name="VFAN" library="SparkFun-Connectors" deviceset="CONN_02" device="3.5MM_LOCK"/>
 </parts>
 <sheets>
 <sheet>
@@ -2148,10 +2148,6 @@ With round pins</description>
 <attribute name="NAME" x="142.49" y="56.485" size="1.778" layer="95" rot="R180"/>
 <attribute name="VALUE" x="142.49" y="85.06" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="VFAN" gate="G$1" x="177.62" y="110" smashed="yes" rot="R180">
-<attribute name="VALUE" x="180.16" y="114.826" size="1.778" layer="96" font="vector" rot="R180"/>
-<attribute name="NAME" x="180.16" y="104.412" size="1.778" layer="95" font="vector" rot="R180"/>
-</instance>
 <instance part="GND3" gate="1" x="166.5" y="101.8" smashed="yes">
 <attribute name="VALUE" x="163.96" y="99.26" size="1.778" layer="96"/>
 </instance>
@@ -2165,6 +2161,10 @@ With round pins</description>
 </instance>
 <instance part="GND4" gate="1" x="107" y="43" smashed="yes">
 <attribute name="VALUE" x="104.46" y="40.46" size="1.778" layer="96"/>
+</instance>
+<instance part="VFAN" gate="G$1" x="181" y="110" smashed="yes" rot="R180">
+<attribute name="VALUE" x="183.54" y="114.826" size="1.778" layer="96" font="vector" rot="R180"/>
+<attribute name="NAME" x="183.54" y="104.412" size="1.778" layer="95" font="vector" rot="R180"/>
 </instance>
 </instances>
 <busses>
@@ -2227,12 +2227,12 @@ With round pins</description>
 <junction x="157" y="101.54"/>
 </segment>
 <segment>
-<pinref part="VFAN" gate="G$1" pin="2"/>
-<wire x1="170" y1="107.46" x2="166.5" y2="107.46" width="0.1524" layer="91"/>
-<wire x1="166.5" y1="107.46" x2="166.5" y2="104.34" width="0.1524" layer="91"/>
 <wire x1="166.5" y1="104.34" x2="166.5" y2="104.2" width="0.1524" layer="91"/>
 <wire x1="166.5" y1="104.2" x2="166.4" y2="104.2" width="0.1524" layer="91"/>
 <pinref part="GND3" gate="1" pin="GND"/>
+<pinref part="VFAN" gate="G$1" pin="2"/>
+<wire x1="166.5" y1="104.34" x2="166.5" y2="107.46" width="0.1524" layer="91"/>
+<wire x1="166.5" y1="107.46" x2="173.38" y2="107.46" width="0.1524" layer="91"/>
 <junction x="166.5" y="104.34"/>
 </segment>
 <segment>
@@ -2350,9 +2350,9 @@ With round pins</description>
 <net name="12V" class="0">
 <segment>
 <pinref part="VR1" gate="G$1" pin="OUT+"/>
-<pinref part="VFAN" gate="G$1" pin="1"/>
-<wire x1="151" y1="110" x2="170" y2="110" width="0.1524" layer="91"/>
+<wire x1="151" y1="110" x2="173.38" y2="110" width="0.1524" layer="91"/>
 <label x="157.7" y="109.9" size="1.778" layer="95"/>
+<pinref part="VFAN" gate="G$1" pin="1"/>
 </segment>
 </net>
 <net name="RFM69_RST" class="0">
