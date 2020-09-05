@@ -2119,6 +2119,7 @@ With round pins</description>
 <part name="GND3" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="BUTTON" library="SparkFun-Connectors" deviceset="CONN_02" device="3.5MM_LOCK"/>
 <part name="JP3" library="pinhead" library_urn="urn:adsk.eagle:library:325" deviceset="PINHD-2X12" device="" package3d_urn="urn:adsk.eagle:package:22420/2"/>
+<part name="GND4" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -2154,13 +2155,16 @@ With round pins</description>
 <instance part="GND3" gate="1" x="166.5" y="101.8" smashed="yes">
 <attribute name="VALUE" x="163.96" y="99.26" size="1.778" layer="96"/>
 </instance>
-<instance part="BUTTON" gate="G$1" x="103.2" y="71.3" smashed="yes">
-<attribute name="VALUE" x="100.66" y="66.474" size="1.778" layer="96" font="vector"/>
-<attribute name="NAME" x="100.66" y="76.888" size="1.778" layer="95" font="vector"/>
+<instance part="BUTTON" gate="G$1" x="118.2" y="52.3" smashed="yes" rot="R180">
+<attribute name="VALUE" x="120.74" y="57.126" size="1.778" layer="96" font="vector" rot="R180"/>
+<attribute name="NAME" x="120.74" y="46.712" size="1.778" layer="95" font="vector" rot="R180"/>
 </instance>
 <instance part="JP3" gate="A" x="66.6" y="76.1" smashed="yes">
 <attribute name="NAME" x="60.25" y="91.975" size="1.778" layer="95"/>
 <attribute name="VALUE" x="60.25" y="55.78" size="1.778" layer="96"/>
+</instance>
+<instance part="GND4" gate="1" x="107" y="43" smashed="yes">
+<attribute name="VALUE" x="104.46" y="40.46" size="1.778" layer="96"/>
 </instance>
 </instances>
 <busses>
@@ -2236,6 +2240,14 @@ With round pins</description>
 <wire x1="138.68" y1="62.2" x2="150" y2="62.2" width="0.1524" layer="91"/>
 <label x="150" y="62" size="1.778" layer="95"/>
 </segment>
+<segment>
+<pinref part="BUTTON" gate="G$1" pin="2"/>
+<wire x1="110.58" y1="49.76" x2="107" y2="49.76" width="0.1524" layer="91"/>
+<wire x1="107" y1="49.76" x2="107" y2="45.54" width="0.1524" layer="91"/>
+<pinref part="GND4" gate="1" pin="GND"/>
+<wire x1="107" y1="45.54" x2="107" y2="45" width="0.1524" layer="91"/>
+<junction x="107" y="45.54"/>
+</segment>
 </net>
 <net name="N$5" class="0">
 <segment>
@@ -2258,11 +2270,19 @@ With round pins</description>
 <wire x1="13.36" y1="81.13" x2="20.98" y2="81.13" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="N$9" class="0">
+<net name="IRR_BUTT" class="0">
 <segment>
 <pinref part="JP1" gate="A" pin="17"/>
 <pinref part="JP1" gate="A" pin="18"/>
 <wire x1="13.36" y1="78.59" x2="20.98" y2="78.59" width="0.1524" layer="91"/>
+<wire x1="13.36" y1="78.59" x2="-5" y2="78.59" width="0.1524" layer="91"/>
+<junction x="13.36" y="78.59"/>
+<label x="-5" y="79" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="BUTTON" gate="G$1" pin="1"/>
+<wire x1="110.58" y1="52.3" x2="98" y2="52.3" width="0.1524" layer="91"/>
+<label x="98" y="53" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="N$10" class="0">
@@ -2360,10 +2380,9 @@ With round pins</description>
 <pinref part="JP1" gate="A" pin="13"/>
 <pinref part="JP1" gate="A" pin="14"/>
 <wire x1="13.36" y1="83.67" x2="20.98" y2="83.67" width="0.1524" layer="91"/>
-<wire x1="13.36" y1="83.67" x2="3.53" y2="83.67" width="0.1524" layer="91"/>
-<wire x1="3.53" y1="83.67" x2="3.53" y2="83.68" width="0.1524" layer="91"/>
 <junction x="13.36" y="83.67"/>
-<label x="3.91" y="83.85" size="1.778" layer="95"/>
+<wire x1="13.36" y1="83.67" x2="-5" y2="83.67" width="0.1524" layer="91"/>
+<label x="-5" y="84" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="RFM69_MOSI" class="0">
@@ -2424,18 +2443,6 @@ With round pins</description>
 <wire x1="71.68" y1="81.18" x2="83" y2="81.18" width="0.1524" layer="91"/>
 <junction x="71.68" y="81.18"/>
 <label x="83" y="81" size="1.778" layer="95"/>
-</segment>
-</net>
-<net name="N$2" class="0">
-<segment>
-<pinref part="BUTTON" gate="G$1" pin="2"/>
-<wire x1="110.82" y1="73.84" x2="118" y2="73.84" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="N$4" class="0">
-<segment>
-<pinref part="BUTTON" gate="G$1" pin="1"/>
-<wire x1="110.82" y1="71.3" x2="118" y2="71.3" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$7" class="0">
