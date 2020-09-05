@@ -2306,9 +2306,10 @@ With round pins</description>
 <part name="GND1" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="GND2" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="MS1" library="adafruit" deviceset="FEATHERWING" device=""/>
-<part name="JP3" library="adafruit" deviceset="PINHD-1X9" device=""/>
+<part name="RFM69" library="adafruit" deviceset="PINHD-1X9" device=""/>
 <part name="VFAN" library="SparkFun-Connectors" deviceset="CONN_02" device=""/>
 <part name="GND3" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
+<part name="BUTTON" library="SparkFun-Connectors" deviceset="CONN_02" device="3.5MM_LOCK"/>
 </parts>
 <sheets>
 <sheet>
@@ -2338,9 +2339,9 @@ With round pins</description>
 <attribute name="VALUE" x="154.46" y="96.46" size="1.778" layer="96"/>
 </instance>
 <instance part="MS1" gate="G$1" x="25.4" y="104.14" smashed="yes" rot="R270"/>
-<instance part="JP3" gate="G$1" x="66.04" y="33.02" smashed="yes" rot="R180">
-<attribute name="NAME" x="72.39" y="19.685" size="1.778" layer="95" rot="R180"/>
-<attribute name="VALUE" x="72.39" y="48.26" size="1.778" layer="96" rot="R180"/>
+<instance part="RFM69" gate="G$1" x="136.14" y="69.82" smashed="yes" rot="R180">
+<attribute name="NAME" x="142.49" y="56.485" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="142.49" y="85.06" size="1.778" layer="96" rot="R180"/>
 </instance>
 <instance part="VFAN" gate="G$1" x="177.62" y="110" smashed="yes" rot="R180">
 <attribute name="VALUE" x="180.16" y="114.826" size="1.778" layer="96" font="vector" rot="R180"/>
@@ -2348,6 +2349,10 @@ With round pins</description>
 </instance>
 <instance part="GND3" gate="1" x="166.5" y="101.8" smashed="yes">
 <attribute name="VALUE" x="163.96" y="99.26" size="1.778" layer="96"/>
+</instance>
+<instance part="BUTTON" gate="G$1" x="103.2" y="71.3" smashed="yes">
+<attribute name="VALUE" x="100.66" y="66.474" size="1.778" layer="96" font="vector"/>
+<attribute name="NAME" x="100.66" y="76.888" size="1.778" layer="95" font="vector"/>
 </instance>
 </instances>
 <busses>
